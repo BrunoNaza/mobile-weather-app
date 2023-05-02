@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 
 class ForecastWeather {
   late String local;
-  late List<int> previsaoTempPorHora = List.filled(12, 0);
+  late List<int> previsaoTempPorHora = List.filled(8, 0);
   late List<int> previsaoTempPorSemanaMax = List.filled(5, 0);
   late List<int> previsaoTempPorSemanaMin = List.filled(5, 0);
   late List<String> iconPathPorHora = [];
@@ -22,7 +22,7 @@ class ForecastWeather {
       final jsonResponse = jsonDecode(dataResponse.body);
       print('https://api.openweathermap.org/data/2.5/forecast?q=$cidade&appid=$apiKey&lang=pt_br&units=metric');
       probabilidadeDeChuva = (jsonResponse['list'][0]['pop']).toDouble() * 100;
-      for (var i = 0; i < 12; i++) {
+      for (var i = 0; i < 8; i++) {
         previsaoTempPorHora[i] = jsonResponse['list'][i]['main']['temp'].toInt();
         iconPathPorHora.add('assets/images/${jsonResponse['list'][i]['weather'][0]['icon']}.png');
       }
@@ -44,7 +44,7 @@ class ForecastWeather {
   //@override
   // String toString() {
   //   final mostraPrevisaoHoraria = StringBuffer('Previsão horária de temperatura:\n');
-  //   for (var i = 0; i < 12; i++) {
+  //   for (var i = 0; i < 8; i++) {
   //     final hora = DateTime.now().add(Duration(hours: i)).hour;
   //     mostraPrevisaoHoraria.write('\t\t$hora:00 - ${this.previsaoTempPorHora[i]}°C - ${this.previsaoCondPorHora[i]}\n');
   //   }

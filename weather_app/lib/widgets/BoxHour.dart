@@ -5,7 +5,7 @@ import '../helpers/functions.dart';
 
 class BoxHour extends StatelessWidget {
 
-  late List<int> previsaoTempPorHora = List.filled(12, 0);
+  late List<int> previsaoTempPorHora = List.filled(8, 0);
   final List<String> imagePath;
 
   BoxHour({
@@ -74,7 +74,7 @@ class BoxHour extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      for (int i = 0; i < 12; i++)
+                      for (int i = 0; i < 8; i++)
                         Container(
                           margin: EdgeInsets.all(4),
                           padding: EdgeInsets.all(12),
@@ -93,13 +93,15 @@ class BoxHour extends StatelessWidget {
                                       color: Colors.white
                                   ),
                               ),
+                              SizedBox(height: 20,),
                               Image.asset(
                                 imagePath[i],
                                 width: 43,
                                 height: 43,
                               ),
+                              SizedBox(height: 20,),
                               Text(
-                                  '${DateTime.now().add(Duration(hours: i+1)).hour}:00',
+                                  '${DateTime.now().add(Duration(hours: (i+1)*3)).hour}:00',
                                   style: const TextStyle(
                                     fontFamily: 'SF Pro Display',
                                     fontWeight: FontWeight.normal,

@@ -26,22 +26,8 @@ class _WeatherAppState extends State<WeatherApp> {
         ),
         scaffoldBackgroundColor:  Colors.transparent,
       ),
-      home: Scaffold(
-        body: Container(
-            decoration : const BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                Color(0xFF08244F),
-                Color(0xFF134CB5),
-                Color(0xFF0B42AB),
-              ],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-            ),
-          ),
-          child: CityScreen(),
-        ),
-      ),
+      home: CityScreen(),
+
     );
 
   }

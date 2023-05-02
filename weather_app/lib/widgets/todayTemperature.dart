@@ -21,8 +21,8 @@ class TodayTemperature extends StatelessWidget {
       children: [
         Image.asset(
           imagePath,
-          width: 200,
-          height: 200,
+          width: 150,
+          height: 150,
         ),
         const SizedBox(height: 16),
         Text(

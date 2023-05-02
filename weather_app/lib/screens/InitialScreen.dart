@@ -67,6 +67,10 @@ class _InitialScreenState extends State<InitialScreen> {
                   Column(
                     children: [
                       ElevatedButton(
+
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all<Color>(Color(0x4D001026)),
+                        ),
                         onPressed: () {
                           Navigator.pop(context);
                           Navigator.push(
@@ -75,6 +79,7 @@ class _InitialScreenState extends State<InitialScreen> {
                           );
 
                         },
+
                         child: Text('${cidadeSelecionada} - Selecionar outra cidade'),
                       ),
                       TodayTemperature(

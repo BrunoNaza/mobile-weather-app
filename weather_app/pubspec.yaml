@@ -115,5 +115,10 @@ flutter:
         - asset: assets/fonts/SF-Pro-Display-Regular.OTF
         - asset: assets/fonts/SF-Pro-Display-Bold.OTF
         - asset: assets/fonts/SF-Pro-Display-Medium.OTF
+    - family: Alegreya Sans
+      fonts:
+        - asset: assets/fonts/AlegreyaSans-Bold.ttf
+        - asset: assets/fonts/AlegreyaSans-Medium.ttf
+        - asset: assets/fonts/AlegreyaSans-Regular.ttf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

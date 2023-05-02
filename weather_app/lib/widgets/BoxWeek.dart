@@ -50,20 +50,21 @@ class BoxWeek extends StatelessWidget {
                   ),
                 ],
               ),
-          SizedBox(
+              SizedBox(height: 8,),
+              SizedBox(
             height: 280,
             child: ListView.builder(
               itemCount: 5,
               itemBuilder: (BuildContext context, int index) {
                 return ListTile(
-                  contentPadding: EdgeInsets.symmetric(vertical: 10),
+                  contentPadding: EdgeInsets.symmetric(vertical: 4),
                   subtitle: Row(
                     children: [
                       Expanded(
                         child: Text(
                           nextFiveDays[index],
                           style: const TextStyle(
-                            fontFamily: 'SF Pro Display',
+                            fontFamily: 'Alegreya Sans',
                             fontWeight: FontWeight.bold,
                             fontSize: 18,
                             color: Colors.white,
@@ -73,8 +74,8 @@ class BoxWeek extends StatelessWidget {
                       Expanded(
                         child: Image.asset(
                           imagePath[index],
-                          width: 43,
-                          height: 43,
+                          width: 50,
+                          height: 50,
                         ),
                       ),
                       Row(
@@ -83,7 +84,7 @@ class BoxWeek extends StatelessWidget {
                           Text(
                             '${previsaoTempMaxSemana[index]}ºC ',
                             style: const TextStyle(
-                              fontFamily: 'SF Pro Display',
+                              fontFamily: 'Alegreya Sans',
                               fontWeight: FontWeight.normal,
                               fontSize: 18,
                               color: Colors.white,
@@ -92,7 +93,7 @@ class BoxWeek extends StatelessWidget {
                           Text(
                             ' ${previsaoTempMinSemana[index]}ºC',
                             style: const TextStyle(
-                              fontFamily: 'SF Pro Display',
+                              fontFamily: 'Alegreya Sans',
                               fontWeight: FontWeight.normal,
                               fontSize: 18,
                               color: Colors.grey,
