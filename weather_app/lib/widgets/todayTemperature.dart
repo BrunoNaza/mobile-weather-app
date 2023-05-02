@@ -2,10 +2,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 
-class todayTemperature extends StatelessWidget {
-  final String title = '23º';
-  final String subtitle = 'Nublado';
-  final String imagePath = 'assets/images/nuvem.png';
+class TodayTemperature extends StatelessWidget {
+  final String title;
+  final String subtitle;
+  final String imagePath;
+
+  TodayTemperature({
+    required this.title,
+    required this.subtitle,
+    required this.imagePath,
+  });
 
 
   @override
@@ -18,17 +24,24 @@ class todayTemperature extends StatelessWidget {
           width: 200,
           height: 200,
         ),
-        SizedBox(height: 16),
+        const SizedBox(height: 16),
         Text(
           title,
-          style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+          style: const TextStyle(fontFamily: 'SF Pro Display', fontSize: 64, fontWeight: FontWeight.bold, color: Colors.white),
+          textAlign: TextAlign.center,
         ),
         SizedBox(height: 16),
         Text(
           subtitle,
-          style: TextStyle(fontSize: 16),
+          style: const TextStyle(
+              fontFamily: 'SF Pro Display',
+              fontWeight: FontWeight.normal,
+              fontSize: 18,
+              color: Colors.white
+          ),
+          textAlign: TextAlign.center,
         ),
-        SizedBox(height: 16),
+        SizedBox(height: 42),
       ],
     );
   }

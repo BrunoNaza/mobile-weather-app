@@ -1,8 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../helpers/functions.dart';
+
 class BoxHour extends StatelessWidget {
-  final String text = 'Mar,9';
+
+  late List<int> previsaoTempPorHora = List.filled(12, 0);
+  final List<String> imagePath;
+
+  BoxHour({
+    required this.previsaoTempPorHora,
+    required this.imagePath,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -10,35 +19,100 @@ class BoxHour extends StatelessWidget {
       padding: EdgeInsets.fromLTRB(25.0,0,25.0,0),
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10.0),
-          color: Colors.grey[200],
+          borderRadius: BorderRadius.circular(20.0),
+          color: const Color(0x4D001026),
+        ),
+        constraints: BoxConstraints(
+          minHeight: 217,
         ),
         child: Column(
           children: [
-            Text('Hoje'),
-            Container(
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    for (int i = 0; i < 12; i++)
-                      Container(
-                        margin: EdgeInsets.all(4),
-                        padding: EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.grey[200],
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Hoje',
+                    style: const TextStyle(
+                      fontFamily: 'SF Pro Display',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                      color: Colors.white,
+                    ),
+                  ),
+                  Expanded(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          getCurrentDate(),
+                          style: const TextStyle(
+                            fontFamily: 'SF Pro Display',
+                            fontWeight: FontWeight.normal,
+                            fontSize: 18,
+                            color: Colors.white,
+                          ),
                         ),
-                        child: Column(
-                          children: [
-                            Text('12°C'),
-                            Icon(Icons.sunny),
-                            Text('$i:00'),
-                          ],
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
+              child: Container(
+                constraints: BoxConstraints(
+                  minHeight: 155,
+                  minWidth: 70,
+                ),
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      for (int i = 0; i < 12; i++)
+                        Container(
+                          margin: EdgeInsets.all(4),
+                          padding: EdgeInsets.all(12),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.transparent,
+                          ),
+                          child: Column(
+                            children: [
+                              Text(
+                                  '${previsaoTempPorHora[i]}°C',
+                                  style: const TextStyle(
+                                      fontFamily: 'SF Pro Display',
+                                      fontWeight: FontWeight.normal,
+                                      fontSize: 18,
+                                      color: Colors.white
+                                  ),
+                              ),
+                              Image.asset(
+                                imagePath[i],
+                                width: 43,
+                                height: 43,
+                              ),
+                              Text(
+                                  '${DateTime.now().add(Duration(hours: i+1)).hour}:00',
+                                  style: const TextStyle(
+                                    fontFamily: 'SF Pro Display',
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 18,
+                                    color: Colors.white
+                                ),
+
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),

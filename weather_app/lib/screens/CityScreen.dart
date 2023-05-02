@@ -9,7 +9,7 @@ class CityScreen extends StatefulWidget {
 class _CityScreenState extends State<CityScreen> {
   String cidadeSelecionada = 'Sao Paulo';
   String _selectedCity = 'São Paulo';
-  List<String> _cities = ['São Paulo', 'Rio de Janeiro', 'Curitiba'];
+  List<String> _cities = ['São Paulo', 'Rio de Janeiro', 'Curitiba', 'Washington'];
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +44,8 @@ class _CityScreenState extends State<CityScreen> {
                     cidadeSelecionada = 'Rio de Janeiro';
                   } else if (_selectedCity == 'Curitiba') {
                     cidadeSelecionada = 'Curitiba';
+                  } else if (_selectedCity == 'Washington') {
+                    cidadeSelecionada = 'Washington';
                   }
                 });
               },

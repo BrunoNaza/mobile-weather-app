@@ -42,6 +42,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  intl: ^0.17.0
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -58,6 +59,22 @@ flutter:
 
   assets:
     - assets/images/nuvem.png
+    - assets/images/01d.png
+    - assets/images/01n.png
+    - assets/images/02d.png
+    - assets/images/02n.png
+    - assets/images/03d.png
+    - assets/images/03n.png
+    - assets/images/04d.png
+    - assets/images/04n.png
+    - assets/images/09d.png
+    - assets/images/09n.png
+    - assets/images/10n.png
+    - assets/images/10d.png
+    - assets/images/11n.png
+    - assets/images/11d.png
+    - assets/images/50d.png
+    - assets/images/50n.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
@@ -92,5 +109,11 @@ flutter:
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
+  fonts:
+    - family: SF Pro Display
+      fonts:
+        - asset: assets/fonts/SF-Pro-Display-Regular.OTF
+        - asset: assets/fonts/SF-Pro-Display-Bold.OTF
+        - asset: assets/fonts/SF-Pro-Display-Medium.OTF
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

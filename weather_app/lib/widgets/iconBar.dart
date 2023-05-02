@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
 
-class iconBar extends StatelessWidget {
+class IconBar extends StatelessWidget {
   final IconData iconLeft = Icons.water_drop;
-  final IconData iconMiddle = Icons.arrow_downward;
+  final IconData iconMiddle = Icons.thermostat_rounded;
   final IconData iconRight = Icons.air;
-  final String textLeft = '10%';
-  final String textMiddle = '50%';
-  final String textRight = '13 km/h';
+  final String textLeft ;
+  final String textMiddle ;
+  final String textRight ;
+
+  IconBar({
+    required this.textLeft,
+    required this.textMiddle,
+    required this.textRight,
+  });
+
 
 
   @override
@@ -16,8 +23,8 @@ class iconBar extends StatelessWidget {
       child: Container(
         height: 50,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(25),
-          color: Colors.grey[200],
+          borderRadius: BorderRadius.circular(20),
+          color: const Color(0x4D001026),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -26,21 +33,45 @@ class iconBar extends StatelessWidget {
               children: [
                 Icon(iconLeft),
                 SizedBox(width: 4),
-                Text(textLeft),
+                Text(
+                  textLeft,
+                  style: const TextStyle(
+                    fontFamily: 'SF Pro Display',
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14,
+                    color: Colors.white
+                  ),
+                ),
               ],
             ),
             Row(
               children: [
                 Icon(iconMiddle),
                 SizedBox(width: 4),
-                Text(textMiddle),
+                Text(
+                  textMiddle,
+                  style: const TextStyle(
+                      fontFamily: 'SF Pro Display',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14,
+                      color: Colors.white
+                  ),
+                ),
               ],
             ),
             Row(
               children: [
                 Icon(iconRight),
                 SizedBox(width: 4),
-                Text(textRight),
+                Text(
+                  textRight,
+                  style: const TextStyle(
+                      fontFamily: 'SF Pro Display',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14,
+                      color: Colors.white
+                  ),
+                ),
               ],
             ),
           ],

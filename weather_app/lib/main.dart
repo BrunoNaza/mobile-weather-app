@@ -20,19 +20,29 @@ class _WeatherAppState extends State<WeatherApp> {
       title: 'Flutter Weather',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        appBarTheme: AppBarTheme(
-          iconTheme: IconThemeData(
-            color: Colors.blue,
-          ),
-          elevation: 0,
+        fontFamily: 'SF Pro Display', // nome da fonte que deseja utilizar
+        iconTheme: const IconThemeData(
+          color: Colors.white,
         ),
-        scaffoldBackgroundColor: Colors.lightBlueAccent,
-        primaryColor: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-        colorScheme:
-        ColorScheme.fromSwatch().copyWith(secondary: Colors.white),
+        scaffoldBackgroundColor:  Colors.transparent,
       ),
-      home: CityScreen(),
+      home: Scaffold(
+        body: Container(
+            decoration : const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Color(0xFF08244F),
+                Color(0xFF134CB5),
+                Color(0xFF0B42AB),
+              ],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+            ),
+          ),
+          child: CityScreen(),
+        ),
+      ),
     );
+
   }
 }
