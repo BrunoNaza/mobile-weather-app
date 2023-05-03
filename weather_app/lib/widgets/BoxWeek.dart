@@ -54,7 +54,7 @@ class BoxWeek extends StatelessWidget {
               SizedBox(
             height: 280,
             child: ListView.builder(
-              itemCount: 5,
+              itemCount: 4,
               itemBuilder: (BuildContext context, int index) {
                 return ListTile(
                   contentPadding: EdgeInsets.symmetric(vertical: 4),
@@ -62,7 +62,7 @@ class BoxWeek extends StatelessWidget {
                     children: [
                       Expanded(
                         child: Text(
-                          nextFiveDays[index],
+                          nextFiveDays[index+1],
                           style: const TextStyle(
                             fontFamily: 'Alegreya Sans',
                             fontWeight: FontWeight.bold,
@@ -73,7 +73,7 @@ class BoxWeek extends StatelessWidget {
                       ),
                       Expanded(
                         child: Image.asset(
-                          imagePath[index],
+                          imagePath[index+1],
                           width: 50,
                           height: 50,
                         ),
@@ -82,7 +82,7 @@ class BoxWeek extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            '${previsaoTempMaxSemana[index]}ºC ',
+                            '${previsaoTempMaxSemana[index+1]}ºC ',
                             style: const TextStyle(
                               fontFamily: 'Alegreya Sans',
                               fontWeight: FontWeight.normal,
@@ -91,7 +91,7 @@ class BoxWeek extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            ' ${previsaoTempMinSemana[index]}ºC',
+                            ' ${previsaoTempMinSemana[index+1]}ºC',
                             style: const TextStyle(
                               fontFamily: 'Alegreya Sans',
                               fontWeight: FontWeight.normal,
