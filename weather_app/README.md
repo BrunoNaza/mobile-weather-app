@@ -6,7 +6,7 @@
 
 # Descrição do Projeto
 
-Um aplicativo mobile de previsão do tempo desenvolvido em Flutter e integrado com a OpenWeatherAPI.
+Um aplicativo mobile de previsão do tempo desenvolvido em Flutter, integrado com a OpenWeatherAPI e GeoJS.
 
 # Funcionalidades e Demonstração da Aplicação
 - `Tempo de Hoje`: A aplicação fornece a temperatura, a condição, a mínima e a máxima do dia de hoje. 
