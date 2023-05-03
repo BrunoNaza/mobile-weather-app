@@ -27,7 +27,12 @@ class TodayTemperature extends StatelessWidget {
         const SizedBox(height: 16),
         Text(
           title,
-          style: const TextStyle(fontFamily: 'SF Pro Display', fontSize: 64, fontWeight: FontWeight.bold, color: Colors.white),
+          style: const TextStyle(
+              fontFamily: 'SF Pro Display',
+              fontSize: 64,
+              fontWeight: FontWeight.bold,
+              color: Colors.white
+          ),
           textAlign: TextAlign.center,
         ),
         SizedBox(height: 16),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/screens/InitialScreen.dart';
+import 'package:weather_app/screens/HomeScreen.dart';
 
 class CityScreen extends StatefulWidget {
   @override

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/screens/CityScreen.dart';
-import 'package:weather_app/screens/InitialScreen.dart';
+import 'package:weather_app/screens/HomeScreen.dart';
 
 void main() {
   runApp(const WeatherApp());
@@ -20,7 +20,7 @@ class _WeatherAppState extends State<WeatherApp> {
       title: 'Flutter Weather',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        fontFamily: 'SF Pro Display', // nome da fonte que deseja utilizar
+        fontFamily: 'SF Pro Display',
         iconTheme: const IconThemeData(
           color: Colors.white,
         ),
