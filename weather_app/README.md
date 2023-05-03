@@ -28,10 +28,12 @@ Um aplicativo mobile de previsão do tempo desenvolvido em Flutter e integrado c
        
 * Depois disso, é preciso abrir a pasta `weather_app` e executar normalmente.
 
-*  Para a demonstração ser mais curta, está disponibilizada no próprio código a minha API KEY, mas caso seja de seu interesse, abaixo segue a dica para como usar sua própria KEY
-
+Para a demonstração ser mais curta, está disponibilizada no próprio código a minha API KEY, mas caso seja de seu interesse, abaixo segue a dica para como usar sua própria KEY
+* 1 - Aqui você consegue pegar sua API KEY :  https://home.openweathermap.org/api_keys 
+* 2 - Depois vá até a pasta onde estão os arquivos e busque `weather_app\lib\models`. 
+* 3 - Nos arquivos: `forecast_weather`e `weather_now`, coloque sua chave: final apiKey = 'Sua chave aqui'
 
 
 # Conclusão
-O desenvolvimento desse trabalho para mim foi algo bastante especial, visto que foi meu primeiro contato com esse tipo de desafio. Acredito que consegui desenvolver algo bem legal e fico feliz com o meu desempenho. Tentei seguir o Mock à risca e penso que consegui :) 
-Foi de grande aprendizado e acredito que fiz o meu melhor! 
+O desenvolvimento desse trabalho para mim foi algo bastante especial, visto que foi meu primeiro contato com esse tipo de desafio. Acredito que consegui desenvolver algo bem legal e fico feliz com o meu desempenho. 
+No primeiro dia, fui logo me inteirar sobre o que eu precisava para continuar. E assim eu fui na Alura e dale video na velocidade 3x pra conseguir dar conta. Depois de umas horas estudando sem parar, fui direto pros modelos e entender como funcionava a API. Depois de um tempão consegui e comecei a trabalhar de fato em Flutter. Isso já era no dia da entrega na madrugada e eu tinha o trabalho inteiro a fazer. Fiquei o dia todo nisso e ao fim do dia vi que o prazo foi adiado. Desde então, fiquei polindo e melhorando tudo que era possível, contato com a API, fidelidade com o Mock, que inclusive acho que fiz bem, e tudo mais. No fim de tudo, foi uma parada muito massa de participar e estou bastante satisfeito com meu desempenho. 
