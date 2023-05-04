@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:weather_app/themes/app_styles.dart';
 
 
 class TodayTemperature extends StatelessWidget {
@@ -27,23 +28,13 @@ class TodayTemperature extends StatelessWidget {
         const SizedBox(height: 16),
         Text(
           title,
-          style: const TextStyle(
-              fontFamily: 'SF Pro Display',
-              fontSize: 64,
-              fontWeight: FontWeight.bold,
-              color: Colors.white
-          ),
+          style: AppStyles.boldSF64TextStyle,
           textAlign: TextAlign.center,
         ),
         SizedBox(height: 16),
         Text(
           subtitle,
-          style: const TextStyle(
-              fontFamily: 'SF Pro Display',
-              fontWeight: FontWeight.normal,
-              fontSize: 18,
-              color: Colors.white
-          ),
+          style: AppStyles.SF18TextStyle,
           textAlign: TextAlign.center,
         ),
         SizedBox(height: 42),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/screens/HomeScreen.dart';
+import 'package:weather_app/screens/home_screen.dart';
+import 'package:weather_app/themes/app_colors.dart';
 
 class CityScreen extends StatefulWidget {
   @override
@@ -20,15 +21,7 @@ class _CityScreenState extends State<CityScreen> {
       ),
       body:  Container(
         decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Color(0xFF08244F),
-              Color(0xFF134CB5),
-              Color(0xFF0B42AB),
-            ],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
+          gradient: AppColors.backgroundGradient,
         ),
         child: Center(
           child: Column(
@@ -68,7 +61,7 @@ class _CityScreenState extends State<CityScreen> {
                   Navigator.pop(context);
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) =>  InitialScreen(cidadeSelecionada: cidadeSelecionada)),
+                    MaterialPageRoute(builder: (context) =>  HomeScreen(cidadeSelecionada: cidadeSelecionada)),
                   );
                 },
                 child: Text('Confirmar'),

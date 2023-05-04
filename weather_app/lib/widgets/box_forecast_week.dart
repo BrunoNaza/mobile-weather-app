@@ -2,15 +2,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:weather_app/helpers/functions.dart';
+import 'package:weather_app/themes/app_colors.dart';
+import 'package:weather_app/themes/app_styles.dart';
 
-class BoxWeek extends StatelessWidget {
+class BoxForecastWeek extends StatelessWidget {
 
   late List<int> previsaoTempMaxSemana = List.filled(5, 0);
   late List<int> previsaoTempMinSemana = List.filled(5, 0);
   final List<String> imagePath;
   final List<String> nextFiveDays = getNextFiveDays();
+  final String imagePathCalendar = 'assets/icons/calendar.png';
 
-  BoxWeek({
+  BoxForecastWeek({
     required this.previsaoTempMaxSemana,
     required this.previsaoTempMinSemana,
     required this.imagePath,
@@ -25,7 +28,7 @@ class BoxWeek extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20.0),
-          color: const Color(0x4D001026),
+          color: AppColors.decorationWidgets,
         ),
 
         child: Padding(
@@ -38,15 +41,12 @@ class BoxWeek extends StatelessWidget {
                 children: [
                   Text(
                     'Previsão do tempo',
-                    style: const TextStyle(
-                      fontFamily: 'SF Pro Display',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      color: Colors.white,
-                    ),
+                    style: AppStyles.boldSF20TextStyle,
                   ),
-                  Icon(
-                    Icons.calendar_month,
+                  Image.asset(
+                    imagePathCalendar,
+                    width: 25,
+                    height: 25,
                   ),
                 ],
               ),
@@ -63,12 +63,7 @@ class BoxWeek extends StatelessWidget {
                       Expanded(
                         child: Text(
                           nextFiveDays[index+1],
-                          style: const TextStyle(
-                            fontFamily: 'Alegreya Sans',
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                            color: Colors.white,
-                          ),
+                          style: AppStyles.boldAlegreya18TextStyle,
                         ),
                       ),
                       Expanded(
@@ -83,21 +78,11 @@ class BoxWeek extends StatelessWidget {
                         children: [
                           Text(
                             '${previsaoTempMaxSemana[index+1]}ºC ',
-                            style: const TextStyle(
-                              fontFamily: 'Alegreya Sans',
-                              fontWeight: FontWeight.normal,
-                              fontSize: 18,
-                              color: Colors.white,
-                            ),
+                            style: AppStyles.alegreya18TextStyle,
                           ),
                           Text(
                             ' ${previsaoTempMinSemana[index+1]}ºC',
-                            style: const TextStyle(
-                              fontFamily: 'Alegreya Sans',
-                              fontWeight: FontWeight.normal,
-                              fontSize: 18,
-                              color: Colors.grey,
-                            ),
+                            style: AppStyles.greyAlegreya18TextStyle,
                           ),
                         ],
                       ),

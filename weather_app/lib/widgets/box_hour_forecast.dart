@@ -1,14 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:weather_app/themes/app_colors.dart';
+import 'package:weather_app/themes/app_styles.dart';
 
 import '../helpers/functions.dart';
+import 'hover_container.dart';
 
-class BoxHour extends StatelessWidget {
+class BoxHourForecast extends StatelessWidget {
 
   late List<int> previsaoTempPorHora = List.filled(8, 0);
   final List<String> imagePath;
 
-  BoxHour({
+  BoxHourForecast({
     required this.previsaoTempPorHora,
     required this.imagePath,
   });
@@ -20,7 +23,7 @@ class BoxHour extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20.0),
-          color: const Color(0x4D001026),
+          color: AppColors.decorationWidgets,
         ),
         constraints: BoxConstraints(
           minHeight: 217,
@@ -35,12 +38,7 @@ class BoxHour extends StatelessWidget {
                 children: [
                   Text(
                     'Hoje',
-                    style: const TextStyle(
-                      fontFamily: 'SF Pro Display',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      color: Colors.white,
-                    ),
+                    style: AppStyles.boldSF20TextStyle,
                   ),
                   Expanded(
                     child: Row(
@@ -49,12 +47,7 @@ class BoxHour extends StatelessWidget {
                       children: [
                         Text(
                           getCurrentDate(),
-                          style: const TextStyle(
-                            fontFamily: 'SF Pro Display',
-                            fontWeight: FontWeight.normal,
-                            fontSize: 18,
-                            color: Colors.white,
-                          ),
+                          style: AppStyles.SF18TextStyle,
                         ),
                       ],
                     ),
@@ -75,23 +68,18 @@ class BoxHour extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       for (int i = 0; i < 8; i++)
-                        Container(
-                          margin: EdgeInsets.all(4),
-                          padding: EdgeInsets.all(12),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Colors.transparent,
-                          ),
-                          child: Column(
-                            children: [
+                        HoverContainer(
+                          onTapDown: () {
+                            // Do something when the container is touched
+                          },
+                          onTapUp: () {
+                            // Do something when the touch is released
+                          },
+                          child:  Column(
+                            children:  [
                               Text(
-                                  '${previsaoTempPorHora[i]}°C',
-                                  style: const TextStyle(
-                                      fontFamily: 'SF Pro Display',
-                                      fontWeight: FontWeight.normal,
-                                      fontSize: 18,
-                                      color: Colors.white
-                                  ),
+                                '${previsaoTempPorHora[i]}°C',
+                                style: AppStyles.SF18TextStyle,
                               ),
                               SizedBox(height: 20,),
                               Image.asset(
@@ -101,13 +89,8 @@ class BoxHour extends StatelessWidget {
                               ),
                               SizedBox(height: 20,),
                               Text(
-                                  '${DateTime.now().add(Duration(hours: (i+1)*3)).hour}:00',
-                                  style: const TextStyle(
-                                    fontFamily: 'SF Pro Display',
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: 18,
-                                    color: Colors.white
-                                ),
+                                '${DateTime.now().add(Duration(hours: (i+1)*3)).hour}:00',
+                                style: AppStyles.SF18TextStyle,
 
                               ),
                             ],

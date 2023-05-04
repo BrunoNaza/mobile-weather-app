@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/themes/app_colors.dart';
+import 'package:weather_app/themes/app_styles.dart';
 
 class IconBar extends StatelessWidget {
-  final IconData iconLeft = Icons.water_drop;
-  final IconData iconMiddle = Icons.thermostat_rounded;
-  final IconData iconRight = Icons.air;
+  final String imagePathHumidity = 'assets/icons/humidity.png';
+  final String imagePathPop = 'assets/icons/pop.png';
+  final String imagePathWind = 'assets/icons/wind.png';
   final String textLeft ;
   final String textMiddle ;
   final String textRight ;
@@ -24,53 +26,50 @@ class IconBar extends StatelessWidget {
         height: 50,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: const Color(0x4D001026),
+          color: AppColors.decorationWidgets,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Row(
               children: [
-                Icon(iconLeft),
+                Image.asset(
+                  imagePathPop,
+                  width: 24,
+                  height: 24,
+                ),
                 SizedBox(width: 4),
                 Text(
                   textLeft,
-                  style: const TextStyle(
-                    fontFamily: 'SF Pro Display',
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14,
-                    color: Colors.white
-                  ),
+                  style: AppStyles.boldSF14TextStyle,
                 ),
               ],
             ),
             Row(
               children: [
-                Icon(iconMiddle),
+                Image.asset(
+                  imagePathHumidity,
+                  width: 24,
+                  height: 24,
+                ),
                 SizedBox(width: 4),
                 Text(
                   textMiddle,
-                  style: const TextStyle(
-                      fontFamily: 'SF Pro Display',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 14,
-                      color: Colors.white
-                  ),
+                  style: AppStyles.boldSF14TextStyle,
                 ),
               ],
             ),
             Row(
               children: [
-                Icon(iconRight),
+                Image.asset(
+                  imagePathWind,
+                  width: 24,
+                  height: 24,
+                ),
                 SizedBox(width: 4),
                 Text(
                   textRight,
-                  style: const TextStyle(
-                      fontFamily: 'SF Pro Display',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 14,
-                      color: Colors.white
-                  ),
+                  style: AppStyles.boldSF14TextStyle,
                 ),
               ],
             ),

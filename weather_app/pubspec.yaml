@@ -75,6 +75,14 @@ flutter:
     - assets/images/11d.png
     - assets/images/50d.png
     - assets/images/50n.png
+    - assets/icons/pop.png
+    - assets/icons/bell.png
+    - assets/icons/calendar.png
+    - assets/icons/humidity.png
+    - assets/icons/pin.png
+    - assets/icons/wind.png
+    - assets/icons/arow_down.png
+
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

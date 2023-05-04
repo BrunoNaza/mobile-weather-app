@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/screens/CityScreen.dart';
-import 'package:weather_app/screens/HomeScreen.dart';
+import 'package:weather_app/screens/city_screen.dart';
+import 'package:weather_app/screens/home_screen.dart';
+import 'package:weather_app/themes/app_colors.dart';
 
 void main() {
   runApp(const WeatherApp());
@@ -22,11 +23,11 @@ class _WeatherAppState extends State<WeatherApp> {
       theme: ThemeData(
         fontFamily: 'SF Pro Display',
         iconTheme: const IconThemeData(
-          color: Colors.white,
+          color: AppColors.iconThemeMainColor,
         ),
-        scaffoldBackgroundColor:  Colors.transparent,
+        scaffoldBackgroundColor:  AppColors.transparentColor,
       ),
-      home: CityScreen(),
+      home: HomeScreen(cidadeSelecionada: 'São Paulo'),
 
     );
 

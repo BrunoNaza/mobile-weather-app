@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'app_colors.dart';
+
 class AppStyles {
   static const TextStyle alegreya18TextStyle = TextStyle(
     fontFamily: 'Alegreya Sans',
@@ -19,7 +21,7 @@ class AppStyles {
     fontFamily: 'Alegreya Sans',
     fontWeight: FontWeight.bold,
     fontSize: 18,
-    color: AppColors.textStyleColore,
+    color: AppColors.textStyleColor,
   );
 
   static const TextStyle boldSF14TextStyle = TextStyle(
@@ -30,26 +32,31 @@ class AppStyles {
   ); //iconBar
 
   static const TextStyle boldSF64TextStyle = TextStyle(
-      fontFamily: 'SF Pro Display',
-      fontSize: 64,
-      fontWeight: FontWeight.bold,
-      color: AppColors.textStyleColor,
+    fontFamily: 'SF Pro Display',
+    fontSize: 64,
+    fontWeight: FontWeight.bold,
+    color: AppColors.textStyleColor,
   ); //usa no todayTemperature
 
   static const TextStyle SF18TextStyle = TextStyle(
-      fontFamily: 'SF Pro Display',
-      fontWeight: FontWeight.normal,
-      fontSize: 18,
-      color: AppColors.textStyleColor,
+    fontFamily: 'SF Pro Display',
+    fontWeight: FontWeight.normal,
+    fontSize: 18,
+    color: AppColors.textStyleColor,
   ); //todayTemperature
 
-static const TextStyle boldSF20TextStyle = TextStyle(
-  fontFamily: 'SF Pro Display',
-  fontWeight: FontWeight.bold,
-  fontSize: 20,
-  color: AppColors.textStyleColor,
-)
+  static const TextStyle boldSF20TextStyle = TextStyle(
+    fontFamily: 'SF Pro Display',
+    fontWeight: FontWeight.bold,
+    fontSize: 20,
+    color: AppColors.textStyleColor,
+  );
 
-
+  static const TextStyle SFw500TextStyle = TextStyle(
+    fontFamily: 'SF Pro Display',
+    fontWeight: FontWeight.w500,
+    fontSize: 18,
+    color: Colors.white,
+  );
 
 }
