@@ -10,6 +10,9 @@ Um aplicativo mobile de previsão do tempo desenvolvido em Flutter, integrado co
 
 # Funcionalidades e Demonstração da Aplicação
 - `Tempo de Hoje`: A aplicação fornece a temperatura, a condição, a mínima e a máxima do dia de hoje. 
+![AppGeral](https://i.imgur.com/ZaPkc4b.mp4)
+
+
 - `Previsão por Hora`: A aplicação fornece a previsão da temperatura, bem como a condição das proximas 24 horas.
 - `Previsão por Semana`: A aplicação fornece a previsão da temperatura mínima e máxima, bem como a condição dos proximos 5 dias.
 - `Mudança de Localização`: A aplicação fornece a possibilidade de escolher diferentes cidades para visualizar as previsões.
