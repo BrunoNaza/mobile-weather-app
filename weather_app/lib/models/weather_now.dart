@@ -29,6 +29,7 @@ class WeatherNow {
 
 
   Future<void> preencherDados(String local, var data) async {
+
     this.local = local;
     this.data = data;
     final apiKey = 'eeaf4a6322df4a1aeaf8840d29ef32a0';

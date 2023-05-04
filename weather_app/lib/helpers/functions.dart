@@ -1,5 +1,12 @@
+import 'package:flutter/cupertino.dart';
 import 'package:intl/intl.dart';
 import 'package:intl/date_symbol_data_local.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+import 'package:weather_app/screens/error_screen.dart';
+
+import '../screens/home_screen.dart';
+
 
 String getCurrentDate() {
   initializeDateFormatting('pt_BR', null);
@@ -26,3 +33,6 @@ List<String> getNextFiveDays() {
 
   return nextFiveDays;
 }
+
+
+

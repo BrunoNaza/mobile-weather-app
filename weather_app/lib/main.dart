@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/screens/city_screen.dart';
+import 'package:weather_app/screens/error_screen.dart';
 import 'package:weather_app/screens/home_screen.dart';
 import 'package:weather_app/themes/app_colors.dart';
+
+import 'models/user_location.dart';
 
 void main() {
   runApp(const WeatherApp());
@@ -15,8 +17,10 @@ class WeatherApp extends StatefulWidget {
 }
 
 class _WeatherAppState extends State<WeatherApp> {
+  UserLocation _userLocation = UserLocation('', '');
+
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Weather',
       debugShowCheckedModeBanner: false,
@@ -27,9 +31,21 @@ class _WeatherAppState extends State<WeatherApp> {
         ),
         scaffoldBackgroundColor:  AppColors.transparentColor,
       ),
-      home: HomeScreen(cidadeSelecionada: 'São Paulo'),
-
+      home: FutureBuilder<void>(
+        future: _userLocation.preencherDados(),
+        builder: (BuildContext context, AsyncSnapshot<void> snapshot) {
+          if (snapshot.hasError) {
+            return ErrorScreen();
+          } else if (snapshot.connectionState == ConnectionState.done) {
+            return HomeScreen(
+              cidadeSelecionada: _userLocation.city,
+              userCity: _userLocation.city,
+            );
+          } else {
+            return const Center(child: CircularProgressIndicator());
+          }
+        },
+      ),
     );
-
   }
 }

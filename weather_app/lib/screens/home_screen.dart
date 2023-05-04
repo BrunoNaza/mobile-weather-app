@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:weather_app/models/user_location.dart';
 import 'package:weather_app/themes/app_colors.dart';
 import 'package:weather_app/widgets/box_hour_forecast.dart';
 import 'package:weather_app/widgets/box_forecast_week.dart';
@@ -8,21 +9,23 @@ import '../models/forecast_weather.dart';
 import '../widgets/custom_dropdown_button.dart';
 import '../widgets/icon_bar.dart';
 import '../widgets/today_temperature.dart';
-import 'city_screen.dart';
+import 'error_screen.dart';
 
 
 class HomeScreen extends StatefulWidget {
-  final String cidadeSelecionada;
-  HomeScreen({required this.cidadeSelecionada});
+  String cidadeSelecionada;
+  String userCity;
+  HomeScreen({required this.cidadeSelecionada, required this.userCity});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState(cidadeSelecionada);
+  State<HomeScreen> createState() => _HomeScreenState(cidadeSelecionada, userCity);
 }
 
 
 class _HomeScreenState extends State<HomeScreen> {
-  final String cidadeSelecionada;
-  _HomeScreenState(this.cidadeSelecionada);
+  late final String cidadeSelecionada;
+  late final String userCity;
+  _HomeScreenState(this.cidadeSelecionada, this.userCity);
   WeatherNow  dia = WeatherNow();
   ForecastWeather forecast = ForecastWeather();
   final String imagePathBell = 'assets/icons/bell.png';
@@ -46,12 +49,13 @@ class _HomeScreenState extends State<HomeScreen> {
           future: Future.wait([
             dia.preencherDados(cidadeSelecionada,  DateTime.now()),
             forecast.preencherDados(cidadeSelecionada),
+
           ]),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               return Center(child: CircularProgressIndicator());
             } else if (snapshot.hasError) {
-              return Text('Erro ao carregar dados');
+              return ErrorScreen();
             } else {
               return SingleChildScrollView(
                 physics: const AlwaysScrollableScrollPhysics(),
@@ -67,13 +71,13 @@ class _HomeScreenState extends State<HomeScreen> {
                             children: [
                               Expanded(
                                 child: CustomDropdownButton(
-                                  items: ['São Paulo', 'Rio de Janeiro', 'Belo Horizonte', 'Florianopolis'],
+                                  items: ['São Paulo', 'Rio de Janeiro', 'Belo Horizonte', 'Florianopolis', userCity],
                                   hintText: cidadeSelecionada,
                                   onChanged: (String? newValue) {
                                     Navigator.pop(context);
                                     Navigator.push(
                                       context,
-                                      MaterialPageRoute(builder: (context) =>  HomeScreen(cidadeSelecionada: newValue!)),
+                                      MaterialPageRoute(builder: (context) =>  HomeScreen(cidadeSelecionada: newValue!, userCity: userCity,)),
                                     );
                                   },
                                 ),
@@ -92,8 +96,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         imagePath: dia.iconPath,
                       ),
                       IconBar(
-                        textLeft: '${dia.umidade.toString()}%',
-                        textMiddle: '${forecast.probabilidadeDeChuva.toStringAsFixed(1)}%',
+                        textLeft: '${forecast.probabilidadeDeChuva.toStringAsFixed(1)}%',
+                        textMiddle: '${dia.umidade.toString()}%',
                         textRight: '${dia.velocidadeDoVento.toStringAsFixed(1)} Km/h',
                       ),
                       SizedBox(height: 20,),
