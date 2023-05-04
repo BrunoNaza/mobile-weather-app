@@ -1,7 +1,7 @@
 # <h1 align="center"> Weather App </h1>
 
 <p align="center">
-<img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
+<img src="http://img.shields.io/static/v1?label=STATUS&message=FINALIZADO&color=GREEN&style=for-the-badge"/>
 </p>
 
 # Descrição do Projeto
@@ -10,13 +10,19 @@ Um aplicativo mobile de previsão do tempo desenvolvido em Flutter, integrado co
 
 # Funcionalidades e Demonstração da Aplicação
 - `Tempo de Hoje`: A aplicação fornece a temperatura, a condição, a mínima e a máxima do dia de hoje. 
-![AppGeral](https://i.imgur.com/ZaPkc4b.mp4)
-
+<img src="https://i.imgur.com/Foxbcbo.gif" width="240" height="480"/>
 
 - `Previsão por Hora`: A aplicação fornece a previsão da temperatura, bem como a condição das proximas 24 horas.
+<img src="https://i.imgur.com/ypJ6Awx.gif" width="240" height="480" />
+
 - `Previsão por Semana`: A aplicação fornece a previsão da temperatura mínima e máxima, bem como a condição dos proximos 5 dias.
+<img src="https://i.imgur.com/hSVX3Zq.gif" width="240" height="480"/>
+
 - `Mudança de Localização`: A aplicação fornece a possibilidade de escolher diferentes cidades para visualizar as previsões.
+<img src="https://i.imgur.com/vvJScRD.gif" width="240" height="480" />
+
 - `Tela de Erro` : Caso não seja possível se conectar com a API, a aplicação tem uma tela de erro que permite tentar novamente. 
+<img src="https://i.imgur.com/AtPLVwK.gif" width="240" height="480"/>
 
 # ![Flutter](https://img.shields.io/badge/-Flutter-blue?style=flat-square&logo=flutter&logoColor=white) Tecnologias utilizadas
 * Desenvolvido em `Flutter` e `Dart`
@@ -35,6 +41,17 @@ Um aplicativo mobile de previsão do tempo desenvolvido em Flutter, integrado co
 * 1 - Aqui você consegue pegar sua API KEY : 
 * 2 - Depois vá até a pasta onde estão os arquivos e busque `weather_app\lib\models`. 
 * 3 - Nos arquivos: `forecast_weather`e `WeatherNow`, coloque sua chave: final apiKey = 'Sua chave aqui'
+
+# Alguns pontos sobre a aplicação e possiveis melhorias 
+
+* Sobre a API, ela fornece previsões a cada 3 horas, portanto é limitado o número de previsões que é possivel de ser feita. 
+* Além disso, ela fornece dados somente dos proximos 5 dias, também deixando limitado as previsões 
+* Uma possivel melhoria para isso é utilizar uma API diferente, talvez paga que forneça mais informações. 
+* Uma outra possivel melhoria é utilizar uma melhor API, que trabalhe com geolocalização, para se trabalhar com latitude e longitude.
+* Sobre o código, ele possui uma lista de cidades pré-determinadas (devido a falta de tempo, não pude implementar algo melhor), mas ao menos uma das cidades da lista será baseada no IP do dispositivo usado. No caso dos GIF de cima, era Joinville.
+* Uma melhoria possivel no código seria a possibilidade de "criar cidades", digitar qualquer cidade e ser capaz de fornecer informações
+* Os assets usados não foram exatamente os do Mock, pois ele não possuia todos os icones necessarios, dessa forma optei por escolher um pacote gratuito e livre, bastante parecido, da internet para usar.
+
 
 
 # Conclusão
