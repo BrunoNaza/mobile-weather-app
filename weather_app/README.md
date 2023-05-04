@@ -37,7 +37,7 @@ Um aplicativo mobile de previsão do tempo desenvolvido em Flutter, integrado co
        
 * Depois disso, é preciso abrir a pasta `weather_app` e executar normalmente.
 
-*  Para a demonstração ser mais curta, está disponibilizada no próprio código a minha API KEY, mas caso seja de seu interesse, abaixo segue a dica para como usar sua própria KEY
+*  Para a demonstração ser mais curta, está disponibilizada no próprio código a minha API KEY = '16bd8cf4d8f87d244c21a6a883526291' , mas caso seja de seu interesse, abaixo segue a dica para como usar sua própria KEY
 * 1 - Aqui você consegue pegar sua API KEY : https://home.openweathermap.org/users/sign_in 
 * 2 - Depois vá até a pasta onde estão os arquivos e busque `weather_app\lib\models`. 
 * 3 - Nos arquivos: `forecast_weather`e `WeatherNow`, coloque sua chave: final apiKey = 'Sua chave aqui'
