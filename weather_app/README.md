@@ -42,22 +42,7 @@ Um aplicativo mobile de previsão do tempo desenvolvido em Flutter, integrado co
 * 2 - Depois vá até a pasta onde estão os arquivos e busque `weather_app\lib\models`. 
 * 3 - Nos arquivos: `forecast_weather`e `WeatherNow`, coloque sua chave: final apiKey = 'Sua chave aqui'
 
-# Alguns pontos sobre a aplicação e possiveis melhorias 
-
-* Sobre a API, ela fornece previsões a cada 3 horas, portanto é limitado o número de previsões que é possivel de ser feita. 
-* Além disso, ela fornece dados somente dos proximos 4 dias, também deixando limitado as previsões 
-* Uma possivel melhoria para isso é utilizar uma API diferente, talvez paga que forneça mais informações. 
-* Uma outra possivel melhoria é utilizar uma melhor API, que trabalhe com geolocalização, para se trabalhar com latitude e longitude.
-* Sobre o código, ele possui uma lista de cidades pré-determinadas (devido a falta de tempo, não pude implementar algo melhor), mas ao menos uma das cidades da lista será baseada no IP do dispositivo usado. No caso dos GIF de cima, era Joinville.
-* Uma melhoria possivel no código seria a possibilidade de "criar cidades", digitar qualquer cidade e ser capaz de fornecer informações
-* Os assets usados não foram exatamente os do Mock, pois ele não possuia todos os icones necessarios, dessa forma optei por escolher um pacote gratuito e livre, bastante parecido, da internet para usar.
-
-
-
-# Conclusão
-O desenvolvimento desse trabalho para mim foi algo bastante especial, visto que foi meu primeiro contato com esse tipo de desafio. Acredito que consegui desenvolver algo bem legal e fico feliz com o meu desempenho. 
-No primeiro dia, fui logo me inteirar sobre o que eu precisava para continuar. E assim eu fui na Alura e dale video na velocidade 3x pra conseguir dar conta. Depois de umas horas estudando sem parar, fui direto pros modelos e entender como funcionava a API. Depois de um tempão consegui e comecei a trabalhar de fato em Flutter. Isso já era no dia da entrega na madrugada e eu tinha o trabalho inteiro a fazer. Fiquei o dia todo nisso e ao fim do dia vi que o prazo foi adiado. Desde então, fiquei polindo e melhorando tudo que era possível, contato com a API, fidelidade com o Mock, que inclusive acho que fiz bem, e tudo mais. No fim de tudo, foi uma parada muito massa de participar e estou bastante satisfeito com meu desempenho. 
-
+#
 # Licenças 
 Os assets utilizados foram, primordialmente, tirados a partir desse link: https://www.freepik.com/free-vector/gradients-weather-icons-apps-collection_15292634.htm 
 A exceção é o asset de floco de neve que foi utilizado desse link: https://br.freepik.com/vetores-gratis/gradientes-de-icones-de-clima-para-aplicativos_15292633.htm#query=clima&position=2&from_view=keyword&track=robertav1_2_sidr 
